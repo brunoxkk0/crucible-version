@@ -4,8 +4,8 @@ const mkdirp = require('mkdirp')
 
 const createVersionsFile = (versionsObject = {}, folder) => {
     const versionsJson = JSON.stringify(versionsObject);
-    console.log("running on " + __dirname)
-    mkdirp(`${__dirname}/${folder}`).then(made =>
+    const dirName = __dirname
+    mkdirp(`${dirName}/${folder}`).then(made =>
         writeFile(`${made}/version.json`, versionsJson, 'utf8', (err) =>{
             if(err){
                 console.error("Fail on creating version.json file. " + err)
