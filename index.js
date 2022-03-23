@@ -62,4 +62,4 @@ const fetchVersions = (project, repo, folder) => {
 }
 
 
-fetchVersions("crucible", "https://api.github.com/repos/CrucibleMC/Crucible/releases", "crucible");
+fetchVersions("crucible", "https://api.github.com/repos/CrucibleMC/Crucible/releases", "versions/crucible");

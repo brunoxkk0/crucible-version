@@ -34,4 +34,5 @@ jobs:
        commit_message: Automated Change
        branch: main
        commit_options: '--no-verify --signoff'
-       repository: ./versions
+       file_pattern: versions/*/*.json
+       repository: .
