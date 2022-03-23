@@ -10,7 +10,6 @@
   "author": "brunoxkk0",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.26.1",
-    "mkdirp": "^1.0.4"
+    "axios": "^0.26.1"
   }
 }

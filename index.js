@@ -1,19 +1,19 @@
 const { default: axios } = require("axios");
-const { writeFile } = require("fs");
-const mkdirp = require('mkdirp')
+const { writeFile, mkdir } = require("fs");
 
 const createVersionsFile = (versionsObject = {}, folder) => {
     const versionsJson = JSON.stringify(versionsObject);
     const dirName = __dirname
-    mkdirp(`${dirName}/${folder}`).then(made =>
-        writeFile(`${made}/version.json`, versionsJson, 'utf8', (err) =>{
+
+    mkdir(`${dirName}/${folder}`, {recursive: true}, (error) =>{
+        writeFile(`${dirName}/${folder}/version.json`, versionsJson, 'utf8', (err) =>{
             if(err){
                 console.error("Fail on creating version.json file. " + err)
             }else{
                 console.log("File " + folder +"/version.js successfully created." )
             }
         })
-    )
+    })
 }
 
 const getVersions = async (repo) => {
